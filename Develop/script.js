@@ -13,20 +13,37 @@ var writePassword = function() {
     }
   console.log(length)
   //ask for character types 
-  var lower = window.prompt("Do you want lowercase characters? YES or NO");
-    if (lower === "YES" || lower === "yes") {
-      console.log("include lower");
-    } else if (lower === "NO" || lower === "no") {
-      console.log("don't include lower");
+  var pwInfo = [lowercase, uppercase, numeric, special];
+  
+  var decision = function() {}
+    for( var i=0; i < pwInfo.length; i++) {
+      var pwInfoObj = pwInfo[i];
+      pwInfoObj = window.prompt("Do you want" + pwInfoObj + "characters? YES or NO");
+      if (pwInfoObj === "YES" || pwInfoObj === "yes") {
+        console.log("include" + pwInfoObj);
+      } else if (pwInfoObj === "NO" || pwInfoObj === "no") {
+        console.log("don't include" + pwInfoObj);
+      } else {
+        window.prompt("Please enter a valid response: YES or NO");
+      };
+  }
+
+
+
+  var lowercase = window.prompt("Do you want" + lowercase + "characters? YES or NO");
+    if (lowercase === "YES" || lowercase === "yes") {
+      console.log("include lowercase");
+    } else if (lowercase === "NO" || lowercase === "no") {
+      console.log("don't include lowercase");
     } else {
       window.prompt("Please enter a valid response: YES or NO");
     };
 
-  var upper = window.prompt("Do you want uppercase characters? YES or NO");
-    if (upper === "YES" || upper === "yes") {
-      console.log("include upper");
-    } else if (upper === "NO" || upper === "no") {
-      console.log("don't include upper");
+  var uppercase = window.prompt("Do you want uppercase characters? YES or NO");
+    if (uppercase === "YES" || uppercase === "yes") {
+      console.log("include uppercase");
+    } else if (uppercase === "NO" || uppercase === "no") {
+      console.log("don't include uppercase");
     } else {
       window.prompt("Please enter a valid response: YES or NO");
     };
@@ -49,7 +66,6 @@ var writePassword = function() {
       window.prompt("Please enter a valid response: YES or NO");
     };
 
-    var pwInfo = [lower, upper, numeric, special];
     console.log(pwInfo);
 }
 
